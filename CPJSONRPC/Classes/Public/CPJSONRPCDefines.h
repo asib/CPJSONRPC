@@ -10,26 +10,30 @@
 
 // CPJSONRPCParseError's are thrown by CPJSONRPCHelper's parseIncoming:error:
 // method.
-typedef enum {
+typedef NS_ENUM(NSInteger, CPJSONRPCParseError) {
     CPJSONRPCParseErrorInvalidVersion,
     CPJSONRPCParseErrorInvalidRequest,
     CPJSONRPCParseErrorInvalidResponse,
-} CPJSONRPCParseError;
+};
 
 // CPJSONRPCObjectError's are thrown by the actual classes.
-typedef enum {
-    CPJSONRPCObjectErrorInvalidNotification,
-    CPJSONRPCObjectErrorInvalidRequest,
+typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
+    CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
+    CPJSONRPCObjectErrorInvalidNotificationNilMethod,
+    CPJSONRPCObjectErrorInvalidNotificationNilParams,
+    CPJSONRPCObjectErrorInvalidRequestInvalidParamsType,
+    CPJSONRPCObjectErrorInvalidRequestNilMethod,
+    CPJSONRPCObjectErrorInvalidRequestNilParams,
+    CPJSONRPCObjectErrorInvalidRequestNilId,
     CPJSONRPCObjectErrorInvalidResponse,
-    CPJSONRPCObjectErrorInvalidError,
-} CPJSONRPCObjectError;
-
-typedef enum {
-    CPJSONRPCIncomingNotification,
-    CPJSONRPCIncomingRequest,
-    CPJSONRPCIncomingResponseResult,
-    CPJSONRPCIncomingResponseError
-} CPJSONRPCIncoming;
+    CPJSONRPCObjectErrorInvalidResponseInvalidResultType,
+    CPJSONRPCObjectErrorInvalidResponseNilResult,
+    CPJSONRPCObjectErrorInvalidResponseNilId,
+    CPJSONRPCObjectErrorInvalidErrorInvalidDataType,
+    CPJSONRPCObjectErrorInvalidErrorNilCode,
+    CPJSONRPCObjectErrorInvalidErrorNilMessage,
+    CPJSONRPCObjectErrorInvalidErrorNilData,
+};
 
 #define JSON_RPC_VERSION @"2.0"
 
@@ -43,10 +47,10 @@ typedef enum {
 #define JSON_RPC_ERROR_MESSAGE_KEY @"message"
 #define JSON_RPC_ERROR_DATA_KEY @"data"
 
+#define CPJSONRPC_DOMAIN @"org.cocoapods.CPJSONRPC"
+
 @protocol CPJSONRPCMessage <NSObject>
-
 - (NSString*)createJSONStringAndReturnError:(NSError**)err;
-
 @end
 
 #endif /* CPJSONRPCDefines_h */

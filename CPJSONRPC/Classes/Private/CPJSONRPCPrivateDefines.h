@@ -8,6 +8,4 @@
 #ifndef CPJSONRPCPrivateDefines_h
 #define CPJSONRPCPrivateDefines_h
 
-#define CPJSONRPC_DOMAIN @"org.cocoapods.CPJSONRPC"
-
 #endif /* CPJSONRPCPrivateDefines_h */

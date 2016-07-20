@@ -19,9 +19,18 @@
 @implementation CPJSONRPCRequest
 
 + (instancetype)requestWithMethod:(NSString *)method params:(id)params msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err {
-    if (![params isKindOfClass:[NSDictionary class]] &&
+    if (method == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilMethod userInfo:nil];
+        return nil;
+    } else if (params == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilParams userInfo:nil];
+        return nil;
+    } else if (msgId == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilId userInfo:nil];
+        return nil;
+    } else if (![params isKindOfClass:[NSDictionary class]] &&
         ![params isKindOfClass:[NSArray class]]) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequest userInfo:nil];
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestInvalidParamsType userInfo:nil];
         return nil;
     }
     

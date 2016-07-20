@@ -1,9 +1,9 @@
 {
   "name": "CPJSONRPC",
   "version": "0.1.0",
-  "summary": "A short description of CPJSONRPC.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/CPJSONRPC",
+  "summary": "A framework for working with JSON-RPC APIs.",
+  "description": "CPJSONRPC provides an interface that eases interaction with APIs that conform\nto the JSON-RPC protocol. It offers classes for holding notification/request/response\ndata and producing a JSON-RPC object, as well as a helper class for parsing\na string into an object of the relevant class (CPJSONRPCNotification, CPJSONRPCRequest,\nor CPJSONRPCResponse).",
+  "homepage": "https://github.com/asib/CPJSONRPC",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,12 @@
     "Jacob Fenton": "jacob.d.fenton@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/CPJSONRPC.git",
+    "git": "https://github.com/asib/CPJSONRPC.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CPJSONRPC/Classes/**/*"
+  "source_files": "CPJSONRPC/Classes/**/*",
+  "public_header_files": "CPJSONRPC/Classes/Public/*.h"
 }

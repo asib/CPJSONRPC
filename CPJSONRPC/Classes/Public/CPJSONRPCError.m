@@ -21,13 +21,21 @@
 @implementation CPJSONRPCError
 
 + (instancetype)errorWithCode:(NSNumber *)code message:(NSString *)message data:(id)data error:(NSError *__autoreleasing *)err {
-    // Boolean values must be NSNumber's using numberWithBool.
-    if (![data isKindOfClass:[NSString class]]     &&
-        ![data isKindOfClass:[NSNumber class]]     &&
-        ![data isKindOfClass:[NSNull class]]       &&
-        ![data isKindOfClass:[NSDictionary class]] &&
-        ![data isKindOfClass:[NSArray class]]) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidError userInfo:nil];
+    if (code == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorNilCode userInfo:nil];
+        return nil;
+    } else if (message == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorNilMessage userInfo:nil];
+        return nil;
+    } else if (data == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorNilData userInfo:nil];
+        return nil;
+    } else if (![data isKindOfClass:[NSString class]]     && // Boolean values must be NSNumber's using numberWithBool.
+               ![data isKindOfClass:[NSNumber class]]     &&
+               ![data isKindOfClass:[NSNull class]]       &&
+               ![data isKindOfClass:[NSDictionary class]] &&
+               ![data isKindOfClass:[NSArray class]]) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorInvalidDataType userInfo:nil];
         return nil;
     }
     

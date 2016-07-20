@@ -6,6 +6,6 @@ target 'CPJSONRPC_Example' do
   target 'CPJSONRPC_Tests' do
     inherit! :search_paths
 
-    
+    pod 'Kiwi'
   end
 end

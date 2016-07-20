@@ -18,9 +18,15 @@
 @implementation CPJSONRPCNotification
 
 + (instancetype)notificationWithMethod:(NSString *)method params:(id)params error:(NSError *__autoreleasing *)err {
-    if (![params isKindOfClass:[NSDictionary class]] &&
-        ![params isKindOfClass:[NSArray class]]) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidNotification userInfo:nil];
+    if (method == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidNotificationNilMethod userInfo:nil];
+        return nil;
+    } else if (params == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidNotificationNilParams userInfo:nil];
+        return nil;
+    } else if (![params isKindOfClass:[NSDictionary class]] &&
+               ![params isKindOfClass:[NSArray class]]) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType userInfo:nil];
         return nil;
     }
     

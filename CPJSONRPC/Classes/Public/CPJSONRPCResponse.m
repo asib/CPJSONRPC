@@ -8,10 +8,10 @@
 #import "CPJSONRPCResponse.h"
 #import "CPJSONRPCPrivateDefines.h"
 
-typedef enum {
+typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
     CPJSONRPCResponseError,
     CPJSONRPCResponseResult
-} CPJSONRPCResponseType;
+};
 
 @interface CPJSONRPCResponse () {
     @private
@@ -35,13 +35,18 @@ typedef enum {
 }
 
 + (instancetype)responseWithResult:(id)result msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err {
-    // Boolean values must be NSNumber's using numberWithBool.
-    if (![result isKindOfClass:[NSString class]]     &&
-        ![result isKindOfClass:[NSNumber class]]     &&
-        ![result isKindOfClass:[NSNull class]]       &&
-        ![result isKindOfClass:[NSDictionary class]] &&
-        ![result isKindOfClass:[NSArray class]]) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponse userInfo:nil];
+    if (result == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseNilResult userInfo:nil];
+        return nil;
+    } else if (msgId == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseNilId userInfo:nil];
+        return nil;
+    } else if (![result isKindOfClass:[NSString class]]     && // Boolean values must be NSNumber's using numberWithBool.
+               ![result isKindOfClass:[NSNumber class]]     &&
+               ![result isKindOfClass:[NSNull class]]       &&
+               ![result isKindOfClass:[NSDictionary class]] &&
+               ![result isKindOfClass:[NSArray class]]) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseInvalidResultType userInfo:nil];
         return nil;
     }
     
