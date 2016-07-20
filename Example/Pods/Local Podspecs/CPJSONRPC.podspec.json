@@ -1,0 +1,22 @@
+{
+  "name": "CPJSONRPC",
+  "version": "0.1.0",
+  "summary": "A short description of CPJSONRPC.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CPJSONRPC",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jacob Fenton": "jacob.d.fenton@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CPJSONRPC.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CPJSONRPC/Classes/**/*"
+}

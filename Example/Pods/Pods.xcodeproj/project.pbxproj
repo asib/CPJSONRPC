@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		244E4121DB7C938079F98757480E4DF4 /* CPJSONRPC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8FFD2615D8FB146998F543608C8FC0 /* CPJSONRPC-dummy.m */; };
+		295531BB739F014440FDB4667983BA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		6CB8C739B2E3C1359566481AE8F4F1A9 /* Pods-CPJSONRPC_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F21E02F68E5F01EB3E495BD08CB2CEF4 /* Pods-CPJSONRPC_Example-dummy.m */; };
+		85FBF81E5B2EF5DC66C35E9CB5969190 /* Pods-CPJSONRPC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AC783A9027F05444484E7085948FC4E /* Pods-CPJSONRPC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AF31F689C7481BD37E0E6B20BEA4BD4 /* Pods-CPJSONRPC_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 471B6818ABDEB2869FC208159FE06367 /* Pods-CPJSONRPC_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		934FD1311D3FC03300AAB8BF /* CPJSONRPCDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1261D3FC03300AAB8BF /* CPJSONRPCDefines.h */; };
+		934FD1321D3FC03300AAB8BF /* CPJSONRPCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1271D3FC03300AAB8BF /* CPJSONRPCError.h */; };
+		934FD1331D3FC03300AAB8BF /* CPJSONRPCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD1281D3FC03300AAB8BF /* CPJSONRPCError.m */; };
+		934FD1341D3FC03300AAB8BF /* CPJSONRPCHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1291D3FC03300AAB8BF /* CPJSONRPCHelper.h */; };
+		934FD1351D3FC03300AAB8BF /* CPJSONRPCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12A1D3FC03300AAB8BF /* CPJSONRPCHelper.m */; };
+		934FD1361D3FC03300AAB8BF /* CPJSONRPCNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12B1D3FC03300AAB8BF /* CPJSONRPCNotification.h */; };
+		934FD1371D3FC03300AAB8BF /* CPJSONRPCNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12C1D3FC03300AAB8BF /* CPJSONRPCNotification.m */; };
+		934FD1381D3FC03300AAB8BF /* CPJSONRPCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12D1D3FC03300AAB8BF /* CPJSONRPCRequest.h */; };
+		934FD1391D3FC03300AAB8BF /* CPJSONRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12E1D3FC03300AAB8BF /* CPJSONRPCRequest.m */; };
+		934FD13A1D3FC03300AAB8BF /* CPJSONRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12F1D3FC03300AAB8BF /* CPJSONRPCResponse.h */; };
+		934FD13B1D3FC03300AAB8BF /* CPJSONRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD1301D3FC03300AAB8BF /* CPJSONRPCResponse.m */; };
+		934FD13D1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD13C1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h */; };
+		986C1A8696B75DF96889F746AD57394F /* Pods-CPJSONRPC_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0183410DA0D00C5A498DC66DAEED6 /* Pods-CPJSONRPC_Tests-dummy.m */; };
+		9D931ADCC53784DAE236A35E7F340FCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		A7AECA912534CCE051BF3616339D7351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		A97A208C8B3BC2496E74C3DE82531704 /* CPJSONRPC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF033AD3A05A2A5BF9FFDCCEF68550E6 /* CPJSONRPC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		631187FF278B3F81C18FF01F06B4E675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43E7BB29287ABED1E49391E7365EDF67;
+			remoteInfo = CPJSONRPC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01BE0432E8D7D034B52B1E10F99BD000 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033201A4AA226E2F1CF1D2643AE77D78 /* CPJSONRPC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CPJSONRPC.modulemap; sourceTree = "<group>"; };
+		06F0183410DA0D00C5A498DC66DAEED6 /* Pods-CPJSONRPC_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CPJSONRPC_Tests-dummy.m"; sourceTree = "<group>"; };
+		0BF72A91D73E057A1B240FE71E269FE5 /* Pods_CPJSONRPC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPJSONRPC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		195B68889C1D8C199CB13CF5C414999A /* Pods-CPJSONRPC_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPJSONRPC_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1F5D026E3A7A0E26BFEA683A0E062121 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CBBB4332B188F8F1953EE683037920F /* Pods-CPJSONRPC_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CPJSONRPC_Example.modulemap"; sourceTree = "<group>"; };
+		2F96EB3635E281378B6FBEA54625230C /* CPJSONRPC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CPJSONRPC-prefix.pch"; sourceTree = "<group>"; };
+		3EEBFB4166B962391E79A594ABFF0E11 /* Pods-CPJSONRPC_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CPJSONRPC_Tests.modulemap"; sourceTree = "<group>"; };
+		471B6818ABDEB2869FC208159FE06367 /* Pods-CPJSONRPC_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CPJSONRPC_Tests-umbrella.h"; sourceTree = "<group>"; };
+		476A3676041346E0D6C20C8E4838617A /* Pods-CPJSONRPC_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CPJSONRPC_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		571E77F90C621AC21A67BDD261725050 /* Pods-CPJSONRPC_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CPJSONRPC_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		57FF6D0A9EE079FCD479560318623CB7 /* Pods-CPJSONRPC_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPJSONRPC_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5AC783A9027F05444484E7085948FC4E /* Pods-CPJSONRPC_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CPJSONRPC_Example-umbrella.h"; sourceTree = "<group>"; };
+		6B4361924DDA62E4C782EA1EECCFE2D2 /* Pods-CPJSONRPC_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CPJSONRPC_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6BD8D81BF55B301A6D4EB954806B4D8C /* CPJSONRPC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CPJSONRPC.xcconfig; sourceTree = "<group>"; };
+		7F2CE703A50C219AF616802C37A3410A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		934FD1261D3FC03300AAB8BF /* CPJSONRPCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCDefines.h; path = Public/CPJSONRPCDefines.h; sourceTree = "<group>"; };
+		934FD1271D3FC03300AAB8BF /* CPJSONRPCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCError.h; path = Public/CPJSONRPCError.h; sourceTree = "<group>"; };
+		934FD1281D3FC03300AAB8BF /* CPJSONRPCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPJSONRPCError.m; path = Public/CPJSONRPCError.m; sourceTree = "<group>"; };
+		934FD1291D3FC03300AAB8BF /* CPJSONRPCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCHelper.h; path = Public/CPJSONRPCHelper.h; sourceTree = "<group>"; };
+		934FD12A1D3FC03300AAB8BF /* CPJSONRPCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPJSONRPCHelper.m; path = Public/CPJSONRPCHelper.m; sourceTree = "<group>"; };
+		934FD12B1D3FC03300AAB8BF /* CPJSONRPCNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCNotification.h; path = Public/CPJSONRPCNotification.h; sourceTree = "<group>"; };
+		934FD12C1D3FC03300AAB8BF /* CPJSONRPCNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPJSONRPCNotification.m; path = Public/CPJSONRPCNotification.m; sourceTree = "<group>"; };
+		934FD12D1D3FC03300AAB8BF /* CPJSONRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCRequest.h; path = Public/CPJSONRPCRequest.h; sourceTree = "<group>"; };
+		934FD12E1D3FC03300AAB8BF /* CPJSONRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPJSONRPCRequest.m; path = Public/CPJSONRPCRequest.m; sourceTree = "<group>"; };
+		934FD12F1D3FC03300AAB8BF /* CPJSONRPCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCResponse.h; path = Public/CPJSONRPCResponse.h; sourceTree = "<group>"; };
+		934FD1301D3FC03300AAB8BF /* CPJSONRPCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPJSONRPCResponse.m; path = Public/CPJSONRPCResponse.m; sourceTree = "<group>"; };
+		934FD13C1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPJSONRPCPrivateDefines.h; path = Private/CPJSONRPCPrivateDefines.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B98A63B49C8B64E11744A844080BD936 /* Pods-CPJSONRPC_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPJSONRPC_Tests-resources.sh"; sourceTree = "<group>"; };
+		B9A0CD575E8D1E1A39969FC4851DD4B5 /* Pods-CPJSONRPC_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPJSONRPC_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BA8FFD2615D8FB146998F543608C8FC0 /* CPJSONRPC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CPJSONRPC-dummy.m"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF033AD3A05A2A5BF9FFDCCEF68550E6 /* CPJSONRPC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CPJSONRPC-umbrella.h"; sourceTree = "<group>"; };
+		D7DC91ECA2D3DDDB30EC9842A5FC3CD1 /* Pods-CPJSONRPC_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPJSONRPC_Example-frameworks.sh"; sourceTree = "<group>"; };
+		E15AD969311F0591D4F5025890146AA9 /* Pods-CPJSONRPC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPJSONRPC_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E3689AD52389107E5AA1076EBDB82AB0 /* Pods-CPJSONRPC_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPJSONRPC_Example-resources.sh"; sourceTree = "<group>"; };
+		EAFADFCDF662C8783AD08200523370A2 /* CPJSONRPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPJSONRPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB04F8A02F47B9B981607C20ADA2A401 /* Pods-CPJSONRPC_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CPJSONRPC_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EC61A5AF848315D074F28A813D3B367A /* Pods_CPJSONRPC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPJSONRPC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21E02F68E5F01EB3E495BD08CB2CEF4 /* Pods-CPJSONRPC_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CPJSONRPC_Example-dummy.m"; sourceTree = "<group>"; };
+		FB90281103CBD2CB210360856097CF3B /* Pods-CPJSONRPC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPJSONRPC_Example.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26B2911CD0FD4695BF6736CD1B9792F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7AECA912534CCE051BF3616339D7351 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CC50F6B3DE75AA17FC0415A061EDE4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D931ADCC53784DAE236A35E7F340FCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		543892CAAFE4712D59381EB925A06DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295531BB739F014440FDB4667983BA3F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		093863942E4B9C296936051AE89151AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAFADFCDF662C8783AD08200523370A2 /* CPJSONRPC.framework */,
+				EC61A5AF848315D074F28A813D3B367A /* Pods_CPJSONRPC_Example.framework */,
+				0BF72A91D73E057A1B240FE71E269FE5 /* Pods_CPJSONRPC_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1191834EE5D8BA4F4AA30F63FD19B5B4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				934FD1251D3FBF9F00AAB8BF /* Private */,
+				934FD1241D3FBF9900AAB8BF /* Public */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		16A16F3DADD4BBDDBD3F59A04FA8D4F1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				522546D13E0899F7D6D96469D24A4C63 /* Pods-CPJSONRPC_Example */,
+				DEEDCA3B727E94E32A9DEF1360B52D7D /* Pods-CPJSONRPC_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3A193F38B0B6C2F45363F97654844B35 /* CPJSONRPC */ = {
+			isa = PBXGroup;
+			children = (
+				1191834EE5D8BA4F4AA30F63FD19B5B4 /* Classes */,
+			);
+			path = CPJSONRPC;
+			sourceTree = "<group>";
+		};
+		3D8FB5DECB2AB274A6D2A5EC821BBDD7 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				821A7C9727F972B3298150D01AD3743C /* CPJSONRPC */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		522546D13E0899F7D6D96469D24A4C63 /* Pods-CPJSONRPC_Example */ = {
+			isa = PBXGroup;
+			children = (
+				1F5D026E3A7A0E26BFEA683A0E062121 /* Info.plist */,
+				2CBBB4332B188F8F1953EE683037920F /* Pods-CPJSONRPC_Example.modulemap */,
+				EB04F8A02F47B9B981607C20ADA2A401 /* Pods-CPJSONRPC_Example-acknowledgements.markdown */,
+				476A3676041346E0D6C20C8E4838617A /* Pods-CPJSONRPC_Example-acknowledgements.plist */,
+				F21E02F68E5F01EB3E495BD08CB2CEF4 /* Pods-CPJSONRPC_Example-dummy.m */,
+				D7DC91ECA2D3DDDB30EC9842A5FC3CD1 /* Pods-CPJSONRPC_Example-frameworks.sh */,
+				E3689AD52389107E5AA1076EBDB82AB0 /* Pods-CPJSONRPC_Example-resources.sh */,
+				5AC783A9027F05444484E7085948FC4E /* Pods-CPJSONRPC_Example-umbrella.h */,
+				195B68889C1D8C199CB13CF5C414999A /* Pods-CPJSONRPC_Example.debug.xcconfig */,
+				FB90281103CBD2CB210360856097CF3B /* Pods-CPJSONRPC_Example.release.xcconfig */,
+			);
+			name = "Pods-CPJSONRPC_Example";
+			path = "Target Support Files/Pods-CPJSONRPC_Example";
+			sourceTree = "<group>";
+		};
+		66530663C4A4349CF42437262576CAB6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				033201A4AA226E2F1CF1D2643AE77D78 /* CPJSONRPC.modulemap */,
+				6BD8D81BF55B301A6D4EB954806B4D8C /* CPJSONRPC.xcconfig */,
+				BA8FFD2615D8FB146998F543608C8FC0 /* CPJSONRPC-dummy.m */,
+				2F96EB3635E281378B6FBEA54625230C /* CPJSONRPC-prefix.pch */,
+				CF033AD3A05A2A5BF9FFDCCEF68550E6 /* CPJSONRPC-umbrella.h */,
+				01BE0432E8D7D034B52B1E10F99BD000 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CPJSONRPC";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3D8FB5DECB2AB274A6D2A5EC821BBDD7 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				093863942E4B9C296936051AE89151AE /* Products */,
+				16A16F3DADD4BBDDBD3F59A04FA8D4F1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		821A7C9727F972B3298150D01AD3743C /* CPJSONRPC */ = {
+			isa = PBXGroup;
+			children = (
+				3A193F38B0B6C2F45363F97654844B35 /* CPJSONRPC */,
+				66530663C4A4349CF42437262576CAB6 /* Support Files */,
+			);
+			name = CPJSONRPC;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		934FD1241D3FBF9900AAB8BF /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				934FD1261D3FC03300AAB8BF /* CPJSONRPCDefines.h */,
+				934FD1271D3FC03300AAB8BF /* CPJSONRPCError.h */,
+				934FD1281D3FC03300AAB8BF /* CPJSONRPCError.m */,
+				934FD1291D3FC03300AAB8BF /* CPJSONRPCHelper.h */,
+				934FD12A1D3FC03300AAB8BF /* CPJSONRPCHelper.m */,
+				934FD12B1D3FC03300AAB8BF /* CPJSONRPCNotification.h */,
+				934FD12C1D3FC03300AAB8BF /* CPJSONRPCNotification.m */,
+				934FD12D1D3FC03300AAB8BF /* CPJSONRPCRequest.h */,
+				934FD12E1D3FC03300AAB8BF /* CPJSONRPCRequest.m */,
+				934FD12F1D3FC03300AAB8BF /* CPJSONRPCResponse.h */,
+				934FD1301D3FC03300AAB8BF /* CPJSONRPCResponse.m */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		934FD1251D3FBF9F00AAB8BF /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				934FD13C1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEEDCA3B727E94E32A9DEF1360B52D7D /* Pods-CPJSONRPC_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CE703A50C219AF616802C37A3410A /* Info.plist */,
+				3EEBFB4166B962391E79A594ABFF0E11 /* Pods-CPJSONRPC_Tests.modulemap */,
+				6B4361924DDA62E4C782EA1EECCFE2D2 /* Pods-CPJSONRPC_Tests-acknowledgements.markdown */,
+				571E77F90C621AC21A67BDD261725050 /* Pods-CPJSONRPC_Tests-acknowledgements.plist */,
+				06F0183410DA0D00C5A498DC66DAEED6 /* Pods-CPJSONRPC_Tests-dummy.m */,
+				B9A0CD575E8D1E1A39969FC4851DD4B5 /* Pods-CPJSONRPC_Tests-frameworks.sh */,
+				B98A63B49C8B64E11744A844080BD936 /* Pods-CPJSONRPC_Tests-resources.sh */,
+				471B6818ABDEB2869FC208159FE06367 /* Pods-CPJSONRPC_Tests-umbrella.h */,
+				57FF6D0A9EE079FCD479560318623CB7 /* Pods-CPJSONRPC_Tests.debug.xcconfig */,
+				E15AD969311F0591D4F5025890146AA9 /* Pods-CPJSONRPC_Tests.release.xcconfig */,
+			);
+			name = "Pods-CPJSONRPC_Tests";
+			path = "Target Support Files/Pods-CPJSONRPC_Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6CEAE0D3A4AF95D336CE49465079FC7D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF31F689C7481BD37E0E6B20BEA4BD4 /* Pods-CPJSONRPC_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DEF12FE244CFE4DE717C9E5B30415A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				934FD1341D3FC03300AAB8BF /* CPJSONRPCHelper.h in Headers */,
+				934FD1311D3FC03300AAB8BF /* CPJSONRPCDefines.h in Headers */,
+				934FD13D1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h in Headers */,
+				A97A208C8B3BC2496E74C3DE82531704 /* CPJSONRPC-umbrella.h in Headers */,
+				934FD1381D3FC03300AAB8BF /* CPJSONRPCRequest.h in Headers */,
+				934FD13A1D3FC03300AAB8BF /* CPJSONRPCResponse.h in Headers */,
+				934FD1321D3FC03300AAB8BF /* CPJSONRPCError.h in Headers */,
+				934FD1361D3FC03300AAB8BF /* CPJSONRPCNotification.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC732BF65465B4993DC4CD3B94ACE982 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FBF81E5B2EF5DC66C35E9CB5969190 /* Pods-CPJSONRPC_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		43E7BB29287ABED1E49391E7365EDF67 /* CPJSONRPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8A71747AB5F8AC19D78599F0DB9941 /* Build configuration list for PBXNativeTarget "CPJSONRPC" */;
+			buildPhases = (
+				A0B54B5B76E199783A60AEBBA786C03B /* Sources */,
+				2CC50F6B3DE75AA17FC0415A061EDE4D /* Frameworks */,
+				6DEF12FE244CFE4DE717C9E5B30415A1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPJSONRPC;
+			productName = CPJSONRPC;
+			productReference = EAFADFCDF662C8783AD08200523370A2 /* CPJSONRPC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		59D442C0CCC5E8D9AE11CE2013D27278 /* Pods-CPJSONRPC_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 332E7D085BCBA62B99908A0FAF62A1E4 /* Build configuration list for PBXNativeTarget "Pods-CPJSONRPC_Tests" */;
+			buildPhases = (
+				11124A37D5D74E9EF5CA5ABEF02B7762 /* Sources */,
+				543892CAAFE4712D59381EB925A06DCC /* Frameworks */,
+				6CEAE0D3A4AF95D336CE49465079FC7D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CPJSONRPC_Tests";
+			productName = "Pods-CPJSONRPC_Tests";
+			productReference = 0BF72A91D73E057A1B240FE71E269FE5 /* Pods_CPJSONRPC_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B089D79446FBE0B982F9311F7B6349D4 /* Pods-CPJSONRPC_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 193CC7684854A1E83AF6BC078245BAF7 /* Build configuration list for PBXNativeTarget "Pods-CPJSONRPC_Example" */;
+			buildPhases = (
+				FF35CC4282D3F911D832C64C5E15DEE6 /* Sources */,
+				26B2911CD0FD4695BF6736CD1B9792F1 /* Frameworks */,
+				AC732BF65465B4993DC4CD3B94ACE982 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE67E8BE7E8F0FEAA9C6C1814F5FB269 /* PBXTargetDependency */,
+			);
+			name = "Pods-CPJSONRPC_Example";
+			productName = "Pods-CPJSONRPC_Example";
+			productReference = EC61A5AF848315D074F28A813D3B367A /* Pods_CPJSONRPC_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 093863942E4B9C296936051AE89151AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43E7BB29287ABED1E49391E7365EDF67 /* CPJSONRPC */,
+				B089D79446FBE0B982F9311F7B6349D4 /* Pods-CPJSONRPC_Example */,
+				59D442C0CCC5E8D9AE11CE2013D27278 /* Pods-CPJSONRPC_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11124A37D5D74E9EF5CA5ABEF02B7762 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986C1A8696B75DF96889F746AD57394F /* Pods-CPJSONRPC_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0B54B5B76E199783A60AEBBA786C03B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				934FD1391D3FC03300AAB8BF /* CPJSONRPCRequest.m in Sources */,
+				934FD1371D3FC03300AAB8BF /* CPJSONRPCNotification.m in Sources */,
+				934FD1331D3FC03300AAB8BF /* CPJSONRPCError.m in Sources */,
+				244E4121DB7C938079F98757480E4DF4 /* CPJSONRPC-dummy.m in Sources */,
+				934FD1351D3FC03300AAB8BF /* CPJSONRPCHelper.m in Sources */,
+				934FD13B1D3FC03300AAB8BF /* CPJSONRPCResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF35CC4282D3F911D832C64C5E15DEE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB8C739B2E3C1359566481AE8F4F1A9 /* Pods-CPJSONRPC_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE67E8BE7E8F0FEAA9C6C1814F5FB269 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CPJSONRPC;
+			target = 43E7BB29287ABED1E49391E7365EDF67 /* CPJSONRPC */;
+			targetProxy = 631187FF278B3F81C18FF01F06B4E675 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ABA71A59ED664CD221437AA7CFDCF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BD8D81BF55B301A6D4EB954806B4D8C /* CPJSONRPC.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CPJSONRPC/CPJSONRPC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CPJSONRPC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CPJSONRPC/CPJSONRPC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CPJSONRPC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3E957AE34E3E61F75920F6201A6D2F7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 195B68889C1D8C199CB13CF5C414999A /* Pods-CPJSONRPC_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CPJSONRPC_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CPJSONRPC_Example/Pods-CPJSONRPC_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CPJSONRPC_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9565495F9547D0C9F2943DABAEFB82D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15AD969311F0591D4F5025890146AA9 /* Pods-CPJSONRPC_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CPJSONRPC_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CPJSONRPC_Tests/Pods-CPJSONRPC_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CPJSONRPC_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A37C7FBF4B0A935FC6E703094C289488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57FF6D0A9EE079FCD479560318623CB7 /* Pods-CPJSONRPC_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CPJSONRPC_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CPJSONRPC_Tests/Pods-CPJSONRPC_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CPJSONRPC_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A8B5D148BDCC7B7C2FB8C1E5AF1F32C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB90281103CBD2CB210360856097CF3B /* Pods-CPJSONRPC_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CPJSONRPC_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CPJSONRPC_Example/Pods-CPJSONRPC_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CPJSONRPC_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C4A85B6DE3180A712D6F6657D4D89208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BD8D81BF55B301A6D4EB954806B4D8C /* CPJSONRPC.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CPJSONRPC/CPJSONRPC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CPJSONRPC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CPJSONRPC/CPJSONRPC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CPJSONRPC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		193CC7684854A1E83AF6BC078245BAF7 /* Build configuration list for PBXNativeTarget "Pods-CPJSONRPC_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E957AE34E3E61F75920F6201A6D2F7D /* Debug */,
+				A8B5D148BDCC7B7C2FB8C1E5AF1F32C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		332E7D085BCBA62B99908A0FAF62A1E4 /* Build configuration list for PBXNativeTarget "Pods-CPJSONRPC_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A37C7FBF4B0A935FC6E703094C289488 /* Debug */,
+				9565495F9547D0C9F2943DABAEFB82D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8A71747AB5F8AC19D78599F0DB9941 /* Build configuration list for PBXNativeTarget "CPJSONRPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A85B6DE3180A712D6F6657D4D89208 /* Debug */,
+				3ABA71A59ED664CD221437AA7CFDCF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

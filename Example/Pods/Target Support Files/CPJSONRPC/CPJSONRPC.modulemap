@@ -1,0 +1,6 @@
+framework module CPJSONRPC {
+  umbrella header "CPJSONRPC-umbrella.h"
+
+  export *
+  module * { export * }
+}

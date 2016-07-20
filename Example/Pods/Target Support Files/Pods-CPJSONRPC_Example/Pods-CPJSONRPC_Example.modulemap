@@ -1,0 +1,6 @@
+framework module Pods_CPJSONRPC_Example {
+  umbrella header "Pods-CPJSONRPC_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
