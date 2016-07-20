@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CPJSONRPC_Example' do
+  pod 'CPJSONRPC', :path => '../'
+
+  target 'CPJSONRPC_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
