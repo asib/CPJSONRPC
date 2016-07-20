@@ -25,7 +25,7 @@ a string into an object of the relevant class (CPJSONRPCNotification, CPJSONRPCR
 or CPJSONRPCResponse).
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/CPJSONRPC'
+  s.homepage         = 'https://github.com/asib/CPJSONRPC'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jacob Fenton' => 'jacob.d.fenton@gmail.com' }
@@ -40,7 +40,7 @@ or CPJSONRPCResponse).
   #   'CPJSONRPC' => ['CPJSONRPC/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/Public/*.h'
+  s.public_header_files = 'CPJSONRPC/Classes/Public/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

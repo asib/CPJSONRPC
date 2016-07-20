@@ -74,7 +74,7 @@ typedef enum {
                                 JSON_RPC_ERROR_MESSAGE_KEY, self.error.message,
                                 JSON_RPC_ERROR_DATA_KEY, self.error.data,
                                 nil];
-        [resp setObject:self.error forKey:JSON_RPC_ERROR_KEY];
+        [resp setObject:rpcErr forKey:JSON_RPC_ERROR_KEY];
     } else {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponse userInfo:nil];
         return nil;

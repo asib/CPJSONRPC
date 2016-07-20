@@ -12,16 +12,16 @@
 		6CB8C739B2E3C1359566481AE8F4F1A9 /* Pods-CPJSONRPC_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F21E02F68E5F01EB3E495BD08CB2CEF4 /* Pods-CPJSONRPC_Example-dummy.m */; };
 		85FBF81E5B2EF5DC66C35E9CB5969190 /* Pods-CPJSONRPC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AC783A9027F05444484E7085948FC4E /* Pods-CPJSONRPC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AF31F689C7481BD37E0E6B20BEA4BD4 /* Pods-CPJSONRPC_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 471B6818ABDEB2869FC208159FE06367 /* Pods-CPJSONRPC_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		934FD1311D3FC03300AAB8BF /* CPJSONRPCDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1261D3FC03300AAB8BF /* CPJSONRPCDefines.h */; };
-		934FD1321D3FC03300AAB8BF /* CPJSONRPCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1271D3FC03300AAB8BF /* CPJSONRPCError.h */; };
+		934FD1311D3FC03300AAB8BF /* CPJSONRPCDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1261D3FC03300AAB8BF /* CPJSONRPCDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		934FD1321D3FC03300AAB8BF /* CPJSONRPCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1271D3FC03300AAB8BF /* CPJSONRPCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934FD1331D3FC03300AAB8BF /* CPJSONRPCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD1281D3FC03300AAB8BF /* CPJSONRPCError.m */; };
-		934FD1341D3FC03300AAB8BF /* CPJSONRPCHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1291D3FC03300AAB8BF /* CPJSONRPCHelper.h */; };
+		934FD1341D3FC03300AAB8BF /* CPJSONRPCHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD1291D3FC03300AAB8BF /* CPJSONRPCHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934FD1351D3FC03300AAB8BF /* CPJSONRPCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12A1D3FC03300AAB8BF /* CPJSONRPCHelper.m */; };
-		934FD1361D3FC03300AAB8BF /* CPJSONRPCNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12B1D3FC03300AAB8BF /* CPJSONRPCNotification.h */; };
+		934FD1361D3FC03300AAB8BF /* CPJSONRPCNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12B1D3FC03300AAB8BF /* CPJSONRPCNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934FD1371D3FC03300AAB8BF /* CPJSONRPCNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12C1D3FC03300AAB8BF /* CPJSONRPCNotification.m */; };
-		934FD1381D3FC03300AAB8BF /* CPJSONRPCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12D1D3FC03300AAB8BF /* CPJSONRPCRequest.h */; };
+		934FD1381D3FC03300AAB8BF /* CPJSONRPCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12D1D3FC03300AAB8BF /* CPJSONRPCRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934FD1391D3FC03300AAB8BF /* CPJSONRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD12E1D3FC03300AAB8BF /* CPJSONRPCRequest.m */; };
-		934FD13A1D3FC03300AAB8BF /* CPJSONRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12F1D3FC03300AAB8BF /* CPJSONRPCResponse.h */; };
+		934FD13A1D3FC03300AAB8BF /* CPJSONRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD12F1D3FC03300AAB8BF /* CPJSONRPCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934FD13B1D3FC03300AAB8BF /* CPJSONRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 934FD1301D3FC03300AAB8BF /* CPJSONRPCResponse.m */; };
 		934FD13D1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 934FD13C1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h */; };
 		986C1A8696B75DF96889F746AD57394F /* Pods-CPJSONRPC_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0183410DA0D00C5A498DC66DAEED6 /* Pods-CPJSONRPC_Tests-dummy.m */; };
@@ -289,11 +289,11 @@
 				934FD1341D3FC03300AAB8BF /* CPJSONRPCHelper.h in Headers */,
 				934FD1311D3FC03300AAB8BF /* CPJSONRPCDefines.h in Headers */,
 				934FD13D1D3FC04900AAB8BF /* CPJSONRPCPrivateDefines.h in Headers */,
-				A97A208C8B3BC2496E74C3DE82531704 /* CPJSONRPC-umbrella.h in Headers */,
 				934FD1381D3FC03300AAB8BF /* CPJSONRPCRequest.h in Headers */,
 				934FD13A1D3FC03300AAB8BF /* CPJSONRPCResponse.h in Headers */,
 				934FD1321D3FC03300AAB8BF /* CPJSONRPCError.h in Headers */,
 				934FD1361D3FC03300AAB8BF /* CPJSONRPCNotification.h in Headers */,
+				A97A208C8B3BC2496E74C3DE82531704 /* CPJSONRPC-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
