@@ -31,8 +31,8 @@
                                                           msgId:@1
                                                           error:&reqErr];
     if (reqErr != nil) {
-        if (reqErr.code == CPJSONRPCObjectErrorInvalidRequest) {
-            NSLog(@"Invalid Request!");
+        if ([reqErr.domain isEqualToString:CPJSONRPC_DOMAIN] && reqErr.code == CPJSONRPCObjectErrorInvalidRequestInvalidParamsType) {
+            // Do something specific
         }
         NSLog(@"Req Err: %@", reqErr);
         return;
