@@ -1,6 +1,6 @@
 # CPJSONRPC
 
-[![CI Status](http://img.shields.io/travis/Jacob Fenton/CPJSONRPC.svg?style=flat)](https://travis-ci.org/Jacob Fenton/CPJSONRPC)
+[![CI Status](http://img.shields.io/travis/asib/CPJSONRPC.svg?style=flat)](https://travis-ci.org/asib/CPJSONRPC)
 [![Version](https://img.shields.io/cocoapods/v/CPJSONRPC.svg?style=flat)](http://cocoapods.org/pods/CPJSONRPC)
 [![License](https://img.shields.io/cocoapods/l/CPJSONRPC.svg?style=flat)](http://cocoapods.org/pods/CPJSONRPC)
 [![Platform](https://img.shields.io/cocoapods/p/CPJSONRPC.svg?style=flat)](http://cocoapods.org/pods/CPJSONRPC)
