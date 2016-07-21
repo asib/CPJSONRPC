@@ -29,37 +29,37 @@ describe(@"The CPJSONRPCNotification", ^{
             [[notif.params should] equal:params];
         });
     });
-    context(@"when marshalled to JSON", ^{
-        
-    });
+//    context(@"when marshalled to JSON", ^{
+//        
+//    });
 });
 SPEC_END
 
 
-////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-
-
-SPEC_BEGIN(CPJSONRPCRequestSpec)
-
-SPEC_END
-
-
-////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-
-
-SPEC_BEGIN(CPJSONRPCResponseSpec)
-describe(@"The CPJSONRPCResponse", ^{
-    context(@"when created as an error", ^{
-        xit(@"should have a nil result", ^{
-            
-        });
-    });
-    context(@"when created as a result", ^{
-        xit(@"should have a nil error", ^{
-            
-        });
-    });
-});
-SPEC_END
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+//SPEC_BEGIN(CPJSONRPCRequestSpec)
+//
+//SPEC_END
+//
+//
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+//SPEC_BEGIN(CPJSONRPCResponseSpec)
+//describe(@"The CPJSONRPCResponse", ^{
+//    context(@"when created as an error", ^{
+//        xit(@"should have a nil result", ^{
+//            
+//        });
+//    });
+//    context(@"when created as a result", ^{
+//        xit(@"should have a nil error", ^{
+//            
+//        });
+//    });
+//});
+//SPEC_END
