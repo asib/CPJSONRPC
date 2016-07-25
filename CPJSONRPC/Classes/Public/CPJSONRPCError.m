@@ -27,10 +27,8 @@
     } else if (message == nil) {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorNilMessage userInfo:nil];
         return nil;
-    } else if (data == nil) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidErrorNilData userInfo:nil];
-        return nil;
-    } else if (![data isKindOfClass:[NSString class]]     && // Boolean values must be NSNumber's using numberWithBool.
+    } else if (data != nil                                && // Boolean values must be NSNumber's using numberWithBool.
+               ![data isKindOfClass:[NSString class]]     &&
                ![data isKindOfClass:[NSNumber class]]     &&
                ![data isKindOfClass:[NSNull class]]       &&
                ![data isKindOfClass:[NSDictionary class]] &&
@@ -44,6 +42,14 @@
     rpcErr.message = message;
     rpcErr.data = data;
     return rpcErr;
+}
+
++ (NSDictionary *)ValidAndExpectedKeys {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_ERROR_CODE_KEY,
+            [NSNumber numberWithBool:YES], JSON_RPC_ERROR_MESSAGE_KEY,
+            [NSNumber numberWithBool:NO], JSON_RPC_ERROR_DATA_KEY,
+            nil];
 }
 
 @end

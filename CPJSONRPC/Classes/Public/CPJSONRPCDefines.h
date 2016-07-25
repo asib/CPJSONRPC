@@ -12,18 +12,15 @@
 // method.
 typedef NS_ENUM(NSInteger, CPJSONRPCParseError) {
     CPJSONRPCParseErrorInvalidVersion,
-    CPJSONRPCParseErrorInvalidRequest,
-    CPJSONRPCParseErrorInvalidResponse,
+    CPJSONRPCParseErrorInvalidMessage,
 };
 
 // CPJSONRPCObjectError's are thrown by the actual classes.
 typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
     CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
     CPJSONRPCObjectErrorInvalidNotificationNilMethod,
-    CPJSONRPCObjectErrorInvalidNotificationNilParams,
     CPJSONRPCObjectErrorInvalidRequestInvalidParamsType,
     CPJSONRPCObjectErrorInvalidRequestNilMethod,
-    CPJSONRPCObjectErrorInvalidRequestNilParams,
     CPJSONRPCObjectErrorInvalidRequestNilId,
     CPJSONRPCObjectErrorInvalidResponse,
     CPJSONRPCObjectErrorInvalidResponseNilError,
@@ -33,7 +30,6 @@ typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
     CPJSONRPCObjectErrorInvalidErrorInvalidDataType,
     CPJSONRPCObjectErrorInvalidErrorNilCode,
     CPJSONRPCObjectErrorInvalidErrorNilMessage,
-    CPJSONRPCObjectErrorInvalidErrorNilData,
 };
 
 #define JSON_RPC_VERSION @"2.0"

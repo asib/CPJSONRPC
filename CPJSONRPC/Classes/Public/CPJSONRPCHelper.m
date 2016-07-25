@@ -36,25 +36,40 @@
     // No need for RPC version now, so we remove it.
     [incomingDictionary removeObjectForKey:JSON_RPC_VERSION_KEY];
     
-    // Dispatch the message off to the relevant handler, or return an error if
-    // the request isn't valid.
-    if ([[CPJSONRPCNotification ValidAndExpectedKeys] isEqualToSet:[NSSet setWithArray:incomingDictionary.allKeys]]) {
+    if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCNotification ValidAndExpectedKeys]]) {
         return [CPJSONRPCHelper handleIncomingNotification:incomingDictionary error:err];
-    } else if ([[CPJSONRPCRequest ValidAndExpectedKeys] isEqualToSet:[NSSet setWithArray:incomingDictionary.allKeys]]) {
+    } else if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCRequest ValidAndExpectedKeys]]) {
         return [CPJSONRPCHelper handleIncomingRequest:incomingDictionary error:err];
-    } else if ([[CPJSONRPCResponse ValidAndExpectedErrorKeys] isEqualToSet:[NSSet setWithArray:incomingDictionary.allKeys]]) {
+    } else if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCResponse ValidAndExpectedErrorKeys]]) {
         return [CPJSONRPCHelper handleIncomingResponseError:incomingDictionary error:err];
-    } else if ([[CPJSONRPCResponse ValidAndExpectedResultKeys] isEqualToSet:[NSSet setWithArray:incomingDictionary.allKeys]]) {
+    } else if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCResponse ValidAndExpectedResultKeys]]) {
         return [CPJSONRPCHelper handleIncomingResponseResult:incomingDictionary error:err];
     }
     
     // If none of the above caught the message, return an error.
-    *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCParseErrorInvalidRequest userInfo:nil];
+    *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCParseErrorInvalidMessage userInfo:nil];
     return nil;
 }
 
-// I've made these methods in case I think of some specific handling that might
-// need to be done. They'll possibly be deleted if they remain redundant.
++ (BOOL)incomingKeyset:(NSArray *)incomingKeys doesComplyWithValidAndExpectedKeyset:(NSDictionary *)expectedKeys {
+    // Make sure all expected keys are present.
+    for (NSString *key in expectedKeys) {
+        BOOL isExpected = [[expectedKeys objectForKey:key] boolValue];
+        if (isExpected && ![incomingKeys containsObject:key]) {
+            return NO;
+        }
+    }
+    
+    // Make sure no unexpected keys are present.
+    for (NSString *key in incomingKeys) {
+        BOOL expected = [expectedKeys objectForKey:key] != nil ? YES : NO;
+        if (!expected) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
 
 + (CPJSONRPCNotification *)handleIncomingNotification:(NSDictionary *)notification error:(NSError **)err {
     return [CPJSONRPCNotification notificationWithMethod:[notification objectForKey:JSON_RPC_METHOD_KEY]
@@ -70,17 +85,26 @@
 }
 
 + (CPJSONRPCResponse *)handleIncomingResponseError:(NSDictionary *)response error:(NSError **)err {
+    // Make sure only the expected keys in the error object are present.
     NSDictionary *rawRPCError = [response objectForKey:JSON_RPC_ERROR_KEY];
-    CPJSONRPCError *rpcError = [CPJSONRPCError errorWithCode:[rawRPCError objectForKey:JSON_RPC_ERROR_CODE_KEY]
-                                                     message:[rawRPCError objectForKey:JSON_RPC_ERROR_MESSAGE_KEY]
-                                                        data:[rawRPCError objectForKey:JSON_RPC_ERROR_DATA_KEY]
+    if ([CPJSONRPCHelper incomingKeyset:rawRPCError.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCError ValidAndExpectedKeys]]) {
+        CPJSONRPCError *rpcError = [CPJSONRPCError errorWithCode:[rawRPCError objectForKey:JSON_RPC_ERROR_CODE_KEY]
+                                                         message:[rawRPCError objectForKey:JSON_RPC_ERROR_MESSAGE_KEY]
+                                                            data:[rawRPCError objectForKey:JSON_RPC_ERROR_DATA_KEY]
+                                                           error:err];
+        if (*err != nil) {
+            return nil;
+        }
+        return [CPJSONRPCResponse responseWithCPJSONRPCError:rpcError
+                                                       msgId:[response objectForKey:JSON_RPC_ID_KEY]
                                                        error:err];
-    if (*err != nil) {
-        return nil;
     }
-    return [CPJSONRPCResponse responseWithCPJSONRPCError:rpcError
-                                                   msgId:[response objectForKey:JSON_RPC_ID_KEY]
-                                                   error:err];
+    
+    // If the error object is malformed, return an error.
+    *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN
+                               code:CPJSONRPCParseErrorInvalidMessage
+                           userInfo:nil];
+    return nil;
 }
 
 + (CPJSONRPCResponse *)handleIncomingResponseResult:(NSDictionary *)response error:(NSError **)err {

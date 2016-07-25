@@ -15,5 +15,6 @@
 @property (strong, nonatomic, readonly) id data;
 
 + (instancetype)errorWithCode:(NSNumber *)code message:(NSString *)message data:(id)data error:(NSError *__autoreleasing *)err;
++ (NSDictionary *)ValidAndExpectedKeys;
 
 @end

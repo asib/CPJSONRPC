@@ -17,6 +17,6 @@
 // with alloc, init.
 + (instancetype)notificationWithMethod:(NSString *)method params:(id)params error:(NSError *__autoreleasing *)err;
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err;
-+ (NSSet *)ValidAndExpectedKeys;
++ (NSDictionary *)ValidAndExpectedKeys;
 
 @end

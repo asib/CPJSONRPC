@@ -22,7 +22,7 @@
 - (BOOL)isError;
 - (BOOL)isResult;
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err;
-+ (NSSet *)ValidAndExpectedResultKeys;
-+ (NSSet *)ValidAndExpectedErrorKeys;
++ (NSDictionary *)ValidAndExpectedResultKeys;
++ (NSDictionary *)ValidAndExpectedErrorKeys;
 
 @end

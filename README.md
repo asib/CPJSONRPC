@@ -7,9 +7,21 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run
 
-You can also run `pod try CPJSONRPC` to download the pod to a temp location, install its dependencies and open the demo project.
+```bash
+$ pod install
+```
+
+from the Example directory first.
+
+You can also run 
+
+```bash
+$ pod try CPJSONRPC
+```
+
+to download the pod to a temp location, install its dependencies and open the demo project.
 
 ## Installation
 
@@ -82,10 +94,12 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 
 // This class method is used by CPJSONRPCHelper when parsing a message to
 // determine if the message is a notification.
-// It returns a set of all the fields that should be present in a JSON-RPC
-// notification, excluding the "jsonrpc" field, which is present in all messages
-// (CPJSONRPCHelper checks this field separately).
-+ (NSSet *)ValidAndExpectedKeys;
+// It returns a dictionary of all the possible fields that could be present in a
+// JSON-RPC notification, excluding the "jsonrpc" field, which is present in all
+// messages (CPJSONRPCHelper checks this field separately). Each field maps to a
+// boolean value, which is YES if the field MUST exist, and NO if the field MAY
+// be omitted.
++ (NSDictionary *)ValidAndExpectedKeys;
 
 @end
 ```
@@ -108,10 +122,11 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 
 // This class method is used by CPJSONRPCHelper when parsing a message to
 // determine if the message is a request.
-// It returns a set of all the fields that should be present in a JSON-RPC
-// request, excluding the "jsonrpc" field, which is present in all messages
-// (CPJSONRPCHelper checks this field separately).
-+ (NSSet *)ValidAndExpectedKeys;
+// It returns a dictionary of all the possible fields that could be present in a
+// JSON-RPC request, excluding the "jsonrpc" field, which is present in all messages
+// (CPJSONRPCHelper checks this field separately). Each field maps to a boolean
+// value, which is YES if the field MUST exist, and NO if the field MAY be omitted.
++ (NSDictionary *)ValidAndExpectedKeys;
 
 @end
 ```
@@ -140,14 +155,19 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // Get the JSON-RPC string using this method.
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err;
 
-// These class methods are used by CPJSONRPCHelper when parsing a message to
-// determine if the message is a response, and what type of response it is.
-// It returns a set of all the fields that should be present in a JSON-RPC
 // They return sets of all the fields that should be present in JSON-RPC
 // error/result responses, excluding the "jsonrpc" field, which is present in
 // all messages (CPJSONRPCHelper checks this field separately).
-+ (NSSet *)ValidAndExpectedResultKeys;
-+ (NSSet *)ValidAndExpectedErrorKeys;
+
+// These class methods are used by CPJSONRPCHelper when parsing a message to
+// determine if the message is a response, and what type of response it is.
+// They return dictionaries of all the possible fields that could be present in
+// JSON-RPC error/result responses, excluding the "jsonrpc" field, which is
+// present in all messages (CPJSONRPCHelper checks this field separately). Each
+// field maps to a boolean value, which is YES if the field MUST exist, and NO
+// if the field MAY be omitted.
++ (NSDictionary *)ValidAndExpectedResultKeys;
++ (NSDictionary *)ValidAndExpectedErrorKeys;
 
 @end
 ```
@@ -165,6 +185,12 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // alloc, init. Using this method ensures all the required fields are set.
 + (instancetype)errorWithCode:(NSNumber *)code message:(NSString *)message data:(id)data error:(NSError *__autoreleasing *)err;
 
+// This class method is used by CPJSONRPCHelper when parsing an error response.
+// It returns a dictionary of all the possible fields that could be present in a
+// JSON-RPC response error object. Each field maps to a boolean value, which is
+// YES if the field MUST exist, and NO if the field MAY be omitted.
++ (NSDictionary *)ValidAndExpectedKeys;
+
 @end
 ```
 
@@ -175,8 +201,7 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // method.
 typedef NS_ENUM(NSInteger, CPJSONRPCParseError) {
     CPJSONRPCParseErrorInvalidVersion,
-    CPJSONRPCParseErrorInvalidRequest,
-    CPJSONRPCParseErrorInvalidResponse,
+    CPJSONRPCParseErrorInvalidMessage,
 };
 
 // CPJSONRPCObjectError's are thrown by the actual classes, generally in the
@@ -184,10 +209,8 @@ typedef NS_ENUM(NSInteger, CPJSONRPCParseError) {
 typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
     CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
     CPJSONRPCObjectErrorInvalidNotificationNilMethod,
-    CPJSONRPCObjectErrorInvalidNotificationNilParams,
     CPJSONRPCObjectErrorInvalidRequestInvalidParamsType,
     CPJSONRPCObjectErrorInvalidRequestNilMethod,
-    CPJSONRPCObjectErrorInvalidRequestNilParams,
     CPJSONRPCObjectErrorInvalidRequestNilId,
     CPJSONRPCObjectErrorInvalidResponse,
     CPJSONRPCObjectErrorInvalidResponseInvalidResultType,
@@ -196,7 +219,6 @@ typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
     CPJSONRPCObjectErrorInvalidErrorInvalidDataType,
     CPJSONRPCObjectErrorInvalidErrorNilCode,
     CPJSONRPCObjectErrorInvalidErrorNilMessage,
-    CPJSONRPCObjectErrorInvalidErrorNilData,
 };
 
 // All JSON-RPC messages should contain "jsonrpc" : "2.0"

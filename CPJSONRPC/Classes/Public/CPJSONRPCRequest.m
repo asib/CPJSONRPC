@@ -22,14 +22,12 @@
     if (method == nil) {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilMethod userInfo:nil];
         return nil;
-    } else if (params == nil) {
-        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilParams userInfo:nil];
-        return nil;
     } else if (msgId == nil) {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestNilId userInfo:nil];
         return nil;
-    } else if (![params isKindOfClass:[NSDictionary class]] &&
-        ![params isKindOfClass:[NSArray class]]) {
+    } else if (params != nil &&
+               ![params isKindOfClass:[NSDictionary class]] &&
+               ![params isKindOfClass:[NSArray class]]) {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidRequestInvalidParamsType userInfo:nil];
         return nil;
     }
@@ -42,18 +40,24 @@
 }
 
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err {
-    NSDictionary *req = [NSDictionary dictionaryWithObjectsAndKeys:
-                         JSON_RPC_VERSION, JSON_RPC_VERSION_KEY,
-                         self.method, JSON_RPC_METHOD_KEY,
-                         self.params, JSON_RPC_PARAMS_KEY,
-                         self.msgId, JSON_RPC_ID_KEY,
-                         nil];
+    NSMutableDictionary *req = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                JSON_RPC_VERSION, JSON_RPC_VERSION_KEY,
+                                self.method, JSON_RPC_METHOD_KEY,
+                                self.msgId, JSON_RPC_ID_KEY,
+                                nil];
+    if (self.params != nil) {
+        [req setObject:self.params forKey:JSON_RPC_PARAMS_KEY];
+    }
     return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:req options:0 error:err]
                                  encoding:NSUTF8StringEncoding];
 }
 
-+ (NSSet *)ValidAndExpectedKeys {
-    return [NSSet setWithObjects:JSON_RPC_METHOD_KEY, JSON_RPC_PARAMS_KEY, JSON_RPC_ID_KEY, nil];
++ (NSDictionary *)ValidAndExpectedKeys {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_METHOD_KEY,
+            [NSNumber numberWithBool:NO], JSON_RPC_PARAMS_KEY,
+            [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
+            nil];
 }
 
 @end

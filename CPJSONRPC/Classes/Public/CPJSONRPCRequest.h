@@ -18,6 +18,6 @@
 // alloc, init.
 + (instancetype)requestWithMethod:(NSString *)method params:(id)params msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err;
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err;
-+ (NSSet *)ValidAndExpectedKeys;
++ (NSDictionary *)ValidAndExpectedKeys;
 
 @end

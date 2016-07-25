@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
 }
 
 + (instancetype)responseWithResult:(id)result msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err {
-    if (result == nil) {
+    if (result == nil) { // Must use NSNull if you want to represent null value.
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseNilResult userInfo:nil];
         return nil;
     } else if (msgId == nil) {
@@ -76,35 +76,42 @@ typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
 - (NSString *)createJSONStringAndReturnError:(NSError *__autoreleasing *)err {
     NSMutableDictionary *resp = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                  JSON_RPC_VERSION, JSON_RPC_VERSION_KEY,
+                                 self.msgId, JSON_RPC_ID_KEY,
                                  nil];
     
     // Not allowed both result and error fields - must have one or the other.
     if (self.result != nil && self.error == nil) {
         [resp setObject:self.result forKey:JSON_RPC_RESULT_KEY];
     } else if (self.error != nil && self.result == nil) {
-        NSDictionary *rpcErr = [NSDictionary dictionaryWithObjectsAndKeys:
-                                JSON_RPC_ERROR_CODE_KEY, self.error.code,
-                                JSON_RPC_ERROR_MESSAGE_KEY, self.error.message,
-                                JSON_RPC_ERROR_DATA_KEY, self.error.data,
-                                nil];
+        NSMutableDictionary *rpcErr = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       self.error.code, JSON_RPC_ERROR_CODE_KEY,
+                                       self.error.message, JSON_RPC_ERROR_MESSAGE_KEY,
+                                       nil];
+        if (self.error.data != nil) {
+            [rpcErr setObject:self.error.data forKey:JSON_RPC_ERROR_DATA_KEY];
+        }
         [resp setObject:rpcErr forKey:JSON_RPC_ERROR_KEY];
     } else {
         *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponse userInfo:nil];
         return nil;
     }
     
-    [resp setObject:JSON_RPC_ID_KEY forKey:self.msgId];
-    
     return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:resp options:0 error:err]
                                  encoding:NSUTF8StringEncoding];
 }
 
-+ (NSSet *)ValidAndExpectedErrorKeys {
-    return [NSSet setWithObjects:JSON_RPC_ERROR_KEY, JSON_RPC_ID_KEY, nil];
++ (NSDictionary *)ValidAndExpectedErrorKeys {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_ERROR_KEY,
+            [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
+            nil];
 }
 
-+ (NSSet *)ValidAndExpectedResultKeys {
-    return [NSSet setWithObjects:JSON_RPC_RESULT_KEY, JSON_RPC_ID_KEY, nil];
++ (NSDictionary *)ValidAndExpectedResultKeys {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_RESULT_KEY,
+            [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
+            nil];
 }
 
 @end
