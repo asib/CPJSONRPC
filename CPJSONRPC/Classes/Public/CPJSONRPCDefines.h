@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
     CPJSONRPCObjectErrorInvalidRequestNilParams,
     CPJSONRPCObjectErrorInvalidRequestNilId,
     CPJSONRPCObjectErrorInvalidResponse,
+    CPJSONRPCObjectErrorInvalidResponseNilError,
     CPJSONRPCObjectErrorInvalidResponseInvalidResultType,
     CPJSONRPCObjectErrorInvalidResponseNilResult,
     CPJSONRPCObjectErrorInvalidResponseNilId,

@@ -26,9 +26,17 @@ typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
 
 @implementation CPJSONRPCResponse
 
-+ (instancetype)responseWithError:(CPJSONRPCError *)err msgId:(NSNumber *)msgId {
++ (instancetype)responseWithCPJSONRPCError:(CPJSONRPCError *)rpcErr msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err {
+    if (rpcErr == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseNilError userInfo:nil];
+        return nil;
+    } else if (msgId == nil) {
+        *err = [NSError errorWithDomain:CPJSONRPC_DOMAIN code:CPJSONRPCObjectErrorInvalidResponseNilId userInfo:nil];
+        return nil;
+    }
+    
     CPJSONRPCResponse *resp = [[CPJSONRPCResponse alloc] init];
-    resp.error = err;
+    resp.error = rpcErr;
     resp.msgId = msgId;
     resp->_type = CPJSONRPCResponseError;
     return resp;

@@ -27,10 +27,13 @@ $ pod install
 ```
 
 You should now be able to import CPJSONRPC in your project using
+
 ```objective-c
 @import CPJSONRPC;
 ```
-or if you wish to import a specific header, use
+
+or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
+
 ```objective-c
 #import <CPJSONRPC/CPJSONRPCRequest.h>
 ```
@@ -179,7 +182,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCParseError) {
 // CPJSONRPCObjectError's are thrown by the actual classes, generally in the
 // methods that create CPJSONRPCMessage-conforming objects.
 typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
-		CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
+    CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
     CPJSONRPCObjectErrorInvalidNotificationNilMethod,
     CPJSONRPCObjectErrorInvalidNotificationNilParams,
     CPJSONRPCObjectErrorInvalidRequestInvalidParamsType,

@@ -17,7 +17,7 @@
 
 // Use these methods to create CPJSONRPCResponse objects. Do not try to create
 // using alloc, init.
-+ (instancetype)responseWithError:(CPJSONRPCError *)err msgId:(NSNumber *)msgId;
++ (instancetype)responseWithCPJSONRPCError:(CPJSONRPCError *)rpcErr msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err;
 + (instancetype)responseWithResult:(id)result msgId:(NSNumber *)msgId error:(NSError *__autoreleasing *)err;
 - (BOOL)isError;
 - (BOOL)isResult;

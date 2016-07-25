@@ -78,8 +78,9 @@
     if (*err != nil) {
         return nil;
     }
-    return [CPJSONRPCResponse responseWithError:rpcError
-                                          msgId:[response objectForKey:JSON_RPC_ID_KEY]];
+    return [CPJSONRPCResponse responseWithCPJSONRPCError:rpcError
+                                                   msgId:[response objectForKey:JSON_RPC_ID_KEY]
+                                                   error:err];
 }
 
 + (CPJSONRPCResponse *)handleIncomingResponseResult:(NSDictionary *)response error:(NSError **)err {
