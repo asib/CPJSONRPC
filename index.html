@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>CPJSONRPC by asib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">CPJSONRPC</h1>
+      <h2 class="project-tagline">A framework for working with JSON-RPC APIs.</h2>
+      <a href="https://github.com/asib/CPJSONRPC" class="btn">View on GitHub</a>
+      <a href="https://github.com/asib/CPJSONRPC/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/asib/CPJSONRPC/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://travis-ci.org/asib/CPJSONRPC"><img src="http://img.shields.io/travis/asib/CPJSONRPC.svg?style=flat" alt="CI Status"></a>
+<a href="http://cocoapods.org/pods/CPJSONRPC"><img src="https://img.shields.io/cocoapods/v/CPJSONRPC.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/CPJSONRPC"><img src="https://img.shields.io/cocoapods/l/CPJSONRPC.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/CPJSONRPC"><img src="https://img.shields.io/cocoapods/p/CPJSONRPC.svg?style=flat" alt="Platform"></a></p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<p>To run the example project, clone the repo, and run</p>
+
+<div class="highlight highlight-source-shell"><pre>$ pod install</pre></div>
+
+<p>from the Example directory first.</p>
+
+<p>You can also run </p>
+
+<div class="highlight highlight-source-shell"><pre>$ pod try CPJSONRPC</pre></div>
+
+<p>to download the pod to a temp location, install its dependencies and open the demo project.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>CPJSONRPC is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>CPJSONRPC<span class="pl-pds">'</span></span></pre></div>
+
+<p>Then, run the following command:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ pod install</pre></div>
+
+<p>You should now be able to import CPJSONRPC in your project using</p>
+
+<div class="highlight highlight-source-objc"><pre>@import CPJSONRPC;</pre></div>
+
+<p>or if you wish to import a specific header, e.g. <code>CPJSONRPCRequest.h</code>, use</p>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>CPJSONRPC/CPJSONRPCRequest.h<span class="pl-pds">&gt;</span></span></pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+
+<h3>
+<a id="cpjsonrpcmessage-protocol" class="anchor" href="#cpjsonrpcmessage-protocol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCMessage Protocol</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@protocol</span> <span class="pl-en">CPJSONRPCMessage</span> &lt;NSObject&gt;
+<span class="pl-c">// All of CPJSONRPCNotification, CPJSONRPCRequest and CPJSONRPCResponse implement</span>
+<span class="pl-c">// this protocol.</span>
+<span class="pl-c">// CPJSONRPCError doesn't, because it is only ever included as part of a JSON-RPC</span>
+<span class="pl-c">// response (and thus a CPJSONRPCError is marshalled during the marshalling of</span>
+<span class="pl-c">// the CPJSONRPCResponse that it's attached to).</span>
+- (<span class="pl-c1">NSString</span>*)<span class="pl-en">createJSONStringAndReturnError</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span>**)<span class="pl-smi">err</span>;
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpchelper" class="anchor" href="#cpjsonrpchelper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCHelper</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">CPJSONRPCHelper</span> : <span class="pl-e">NSObject</span>
+
+<span class="pl-c">// Returns one of the CPJSONRPC classes, depending on what type of message</span>
+<span class="pl-c">// is supplied. Callers must check the error before trying to use the returned class.</span>
++ (<span class="pl-k">id</span>&lt;CPJSONRPCMessage&gt;)<span class="pl-en">parseIncoming</span><span class="pl-en">:</span>(<span class="pl-c1">NSString</span> *)<span class="pl-smi">incoming</span> <span class="pl-en">error</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpcnotification" class="anchor" href="#cpjsonrpcnotification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCNotification</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">CPJSONRPCNotification</span> : <span class="pl-e">NSObject</span>&lt;CPJSONRPCMessage&gt;
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSString</span> *method;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-k">id</span> params;
+
+<span class="pl-c">// Use this method to create CPJSONRPCNotification objects. Do no try to create</span>
+<span class="pl-c">// with alloc, init. Using this method ensures that all required fields are set.</span>
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">notificationWithMethod</span><span class="pl-en">:</span>(<span class="pl-c1">NSString</span> *)<span class="pl-smi">method</span> <span class="pl-en">params</span><span class="pl-en">:</span>(<span class="pl-k">id</span>)<span class="pl-smi">params</span> <span class="pl-en">error</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// Get the JSON-RPC string using this method.</span>
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">createJSONStringAndReturnError</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// This class method is used by CPJSONRPCHelper when parsing a message to</span>
+<span class="pl-c">// determine if the message is a notification.</span>
+<span class="pl-c">// It returns a dictionary of all the possible fields that could be present in a</span>
+<span class="pl-c">// JSON-RPC notification, excluding the "jsonrpc" field, which is present in all</span>
+<span class="pl-c">// messages (CPJSONRPCHelper checks this field separately). Each field maps to a</span>
+<span class="pl-c">// boolean value, which is YES if the field MUST exist, and NO if the field MAY</span>
+<span class="pl-c">// be omitted.</span>
++ (<span class="pl-c1">NSDictionary</span> *)<span class="pl-en">ValidAndExpectedKeys</span>;
+
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpcrequest" class="anchor" href="#cpjsonrpcrequest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCRequest</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">CPJSONRPCRequest</span> : <span class="pl-e">NSObject</span>&lt;CPJSONRPCMessage&gt;
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSString</span> *method;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-k">id</span> params;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSNumber</span> *msgId;
+
+<span class="pl-c">// Use this method to create CPJSONRPCRequest objects. Do no try to create with</span>
+<span class="pl-c">// alloc, init. Using this method ensures that all the required fields are set.</span>
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">requestWithMethod</span><span class="pl-en">:</span>(<span class="pl-c1">NSString</span> *)<span class="pl-smi">method</span> <span class="pl-en">params</span><span class="pl-en">:</span>(<span class="pl-k">id</span>)<span class="pl-smi">params</span> <span class="pl-en">msgId</span><span class="pl-en">:</span>(<span class="pl-c1">NSNumber</span> *)<span class="pl-smi">msgId</span> <span class="pl-en">error</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// Get the JSON-RPC string using this method.</span>
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">createJSONStringAndReturnError</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// This class method is used by CPJSONRPCHelper when parsing a message to</span>
+<span class="pl-c">// determine if the message is a request.</span>
+<span class="pl-c">// It returns a dictionary of all the possible fields that could be present in a</span>
+<span class="pl-c">// JSON-RPC request, excluding the "jsonrpc" field, which is present in all messages</span>
+<span class="pl-c">// (CPJSONRPCHelper checks this field separately). Each field maps to a boolean</span>
+<span class="pl-c">// value, which is YES if the field MUST exist, and NO if the field MAY be omitted.</span>
++ (<span class="pl-c1">NSDictionary</span> *)<span class="pl-en">ValidAndExpectedKeys</span>;
+
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpcresponse" class="anchor" href="#cpjsonrpcresponse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCResponse</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">CPJSONRPCResponse</span> : <span class="pl-e">NSObject</span>&lt;CPJSONRPCMessage&gt;
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-k">id</span> result;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) CPJSONRPCError *error;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSNumber</span> *msgId;
+
+<span class="pl-c">// Use these methods to create CPJSONRPCResponse objects. Do not try to create</span>
+<span class="pl-c">// using alloc, init. Using these methods ensures we don't violate the JSON-RPC</span>
+<span class="pl-c">// protocol by including both "result" and "error" fields, and that all required</span>
+<span class="pl-c">// fields are set.</span>
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">responseWithError</span><span class="pl-en">:</span>(CPJSONRPCError *)<span class="pl-smi">err</span> <span class="pl-en">msgId</span><span class="pl-en">:</span>(<span class="pl-c1">NSNumber</span> *)<span class="pl-smi">msgId</span>;
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">responseWithResult</span><span class="pl-en">:</span>(<span class="pl-k">id</span>)<span class="pl-smi">result</span> <span class="pl-en">msgId</span><span class="pl-en">:</span>(<span class="pl-c1">NSNumber</span> *)<span class="pl-smi">msgId</span> <span class="pl-en">error</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// These methods allow quick identification of whether a CPJSONRPCResponse is</span>
+<span class="pl-c">// an error or result response.</span>
+- (<span class="pl-k">BOOL</span>)<span class="pl-en">isError</span>;
+- (<span class="pl-k">BOOL</span>)<span class="pl-en">isResult</span>;
+
+<span class="pl-c">// Get the JSON-RPC string using this method.</span>
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">createJSONStringAndReturnError</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// They return sets of all the fields that should be present in JSON-RPC</span>
+<span class="pl-c">// error/result responses, excluding the "jsonrpc" field, which is present in</span>
+<span class="pl-c">// all messages (CPJSONRPCHelper checks this field separately).</span>
+
+<span class="pl-c">// These class methods are used by CPJSONRPCHelper when parsing a message to</span>
+<span class="pl-c">// determine if the message is a response, and what type of response it is.</span>
+<span class="pl-c">// They return dictionaries of all the possible fields that could be present in</span>
+<span class="pl-c">// JSON-RPC error/result responses, excluding the "jsonrpc" field, which is</span>
+<span class="pl-c">// present in all messages (CPJSONRPCHelper checks this field separately). Each</span>
+<span class="pl-c">// field maps to a boolean value, which is YES if the field MUST exist, and NO</span>
+<span class="pl-c">// if the field MAY be omitted.</span>
++ (<span class="pl-c1">NSDictionary</span> *)<span class="pl-en">ValidAndExpectedResultKeys</span>;
++ (<span class="pl-c1">NSDictionary</span> *)<span class="pl-en">ValidAndExpectedErrorKeys</span>;
+
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpcerror" class="anchor" href="#cpjsonrpcerror" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCError</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">CPJSONRPCError</span> : <span class="pl-e">NSObject</span>
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSNumber</span> *code;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-c1">NSString</span> *message;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>, <span class="pl-k">readonly</span>) <span class="pl-k">id</span> data;
+
+<span class="pl-c">// Use this method to create CPJSONRPCError objects. Do not try to create using</span>
+<span class="pl-c">// alloc, init. Using this method ensures all the required fields are set.</span>
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">errorWithCode</span><span class="pl-en">:</span>(<span class="pl-c1">NSNumber</span> *)<span class="pl-smi">code</span> <span class="pl-en">message</span><span class="pl-en">:</span>(<span class="pl-c1">NSString</span> *)<span class="pl-smi">message</span> <span class="pl-en">data</span><span class="pl-en">:</span>(<span class="pl-k">id</span>)<span class="pl-smi">data</span> <span class="pl-en">error</span><span class="pl-en">:</span>(<span class="pl-c1">NSError</span> *__autoreleasing *)<span class="pl-smi">err</span>;
+
+<span class="pl-c">// This class method is used by CPJSONRPCHelper when parsing an error response.</span>
+<span class="pl-c">// It returns a dictionary of all the possible fields that could be present in a</span>
+<span class="pl-c">// JSON-RPC response error object. Each field maps to a boolean value, which is</span>
+<span class="pl-c">// YES if the field MUST exist, and NO if the field MAY be omitted.</span>
++ (<span class="pl-c1">NSDictionary</span> *)<span class="pl-en">ValidAndExpectedKeys</span>;
+
+<span class="pl-k">@end</span></pre></div>
+
+<h3>
+<a id="cpjsonrpcdefinesh" class="anchor" href="#cpjsonrpcdefinesh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CPJSONRPCDefines.h</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">// CPJSONRPCParseError's are thrown by CPJSONRPCHelper's parseIncoming:error:</span>
+<span class="pl-c">// method.</span>
+<span class="pl-k">typedef</span> <span class="pl-en">NS_ENUM</span>(<span class="pl-k">NSInteger</span>, CPJSONRPCParseError) {
+    CPJSONRPCParseErrorInvalidVersion,
+    CPJSONRPCParseErrorInvalidMessage,
+};
+
+<span class="pl-c">// CPJSONRPCObjectError's are thrown by the actual classes, generally in the</span>
+<span class="pl-c">// methods that create CPJSONRPCMessage-conforming objects.</span>
+<span class="pl-k">typedef</span> <span class="pl-en">NS_ENUM</span>(<span class="pl-k">NSInteger</span>, CPJSONRPCObjectError) {
+    CPJSONRPCObjectErrorInvalidNotificationInvalidParamsType,
+    CPJSONRPCObjectErrorInvalidNotificationNilMethod,
+    CPJSONRPCObjectErrorInvalidRequestInvalidParamsType,
+    CPJSONRPCObjectErrorInvalidRequestNilMethod,
+    CPJSONRPCObjectErrorInvalidRequestNilId,
+    CPJSONRPCObjectErrorInvalidResponse,
+    CPJSONRPCObjectErrorInvalidResponseInvalidResultType,
+    CPJSONRPCObjectErrorInvalidResponseNilResult,
+    CPJSONRPCObjectErrorInvalidResponseNilId,
+    CPJSONRPCObjectErrorInvalidErrorInvalidDataType,
+    CPJSONRPCObjectErrorInvalidErrorNilCode,
+    CPJSONRPCObjectErrorInvalidErrorNilMessage,
+};
+
+<span class="pl-c">// All JSON-RPC messages should contain "jsonrpc" : "2.0"</span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_VERSION</span> <span class="pl-s"><span class="pl-pds">@"</span>2.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c">// These are all the JSON-RPC fields.</span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_VERSION_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>jsonrpc<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_METHOD_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>method<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_PARAMS_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>params<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_ID_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>id<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_RESULT_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>result<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_ERROR_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>error<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_ERROR_CODE_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>code<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_ERROR_MESSAGE_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>message<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">JSON_RPC_ERROR_DATA_KEY</span> <span class="pl-s"><span class="pl-pds">@"</span>data<span class="pl-pds">"</span></span>
+
+<span class="pl-c">// Check the domain of any returned errors using this define.</span>
+#<span class="pl-k">define</span> <span class="pl-en">CPJSONRPC_DOMAIN</span> <span class="pl-s"><span class="pl-pds">@"</span>org.cocoapods.CPJSONRPC<span class="pl-pds">"</span></span></pre></div>
+
+<h2>
+<a id="unit-tests" class="anchor" href="#unit-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unit Tests</h2>
+
+<p>I've written a number of tests, check <code>CPJSONRPCSpec.m</code> in the example project. To run these tests, open up the example project and press <code>⌘+U</code>.</p>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Jacob Fenton, <a href="mailto:jacob.d.fenton@gmail.com">jacob.d.fenton@gmail.com</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>CPJSONRPC is available under the MIT license. See the LICENSE file for more info.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/asib/CPJSONRPC">CPJSONRPC</a> is maintained by <a href="https://github.com/asib">asib</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
