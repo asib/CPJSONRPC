@@ -15,7 +15,9 @@
 @interface CPJSONRPCResponse : NSObject<CPJSONRPCMessage>
 
 /**
- The ID of the request to which this response pertains.
+ The response result.
+ 
+ @warning Will be `nil` if `isError` returns `YES`.
  */
 @property (strong, nonatomic, readonly) id result;
 
@@ -27,9 +29,7 @@
 @property (strong, nonatomic, readonly) CPJSONRPCError *error;
 
 /**
- The response result.
- 
- @warning Will be `nil` if `isError` returns `YES`.
+ The ID of the request to which this response pertains.
  */
 @property (strong, nonatomic, readonly) NSNumber *msgId;
 
