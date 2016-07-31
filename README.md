@@ -95,10 +95,8 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // This class method is used by CPJSONRPCHelper when parsing a message to
 // determine if the message is a notification.
 // It returns a dictionary of all the possible fields that could be present in a
-// JSON-RPC notification, excluding the "jsonrpc" field, which is present in all
-// messages (CPJSONRPCHelper checks this field separately). Each field maps to a
-// boolean value, which is YES if the field MUST exist, and NO if the field MAY
-// be omitted.
+// JSON-RPC notification. Each field maps to a boolean value, which is YES if the
+// field MUST exist, and NO if the field MAY be omitted.
 + (NSDictionary *)ValidAndExpectedKeys;
 
 @end
@@ -123,9 +121,8 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // This class method is used by CPJSONRPCHelper when parsing a message to
 // determine if the message is a request.
 // It returns a dictionary of all the possible fields that could be present in a
-// JSON-RPC request, excluding the "jsonrpc" field, which is present in all messages
-// (CPJSONRPCHelper checks this field separately). Each field maps to a boolean
-// value, which is YES if the field MUST exist, and NO if the field MAY be omitted.
+// JSON-RPC request. Each field maps to a boolean value, which is YES if the field
+// MUST exist, and NO if the field MAY be omitted.
 + (NSDictionary *)ValidAndExpectedKeys;
 
 @end
@@ -162,10 +159,8 @@ or if you wish to import a specific header, e.g. `CPJSONRPCRequest.h`, use
 // These class methods are used by CPJSONRPCHelper when parsing a message to
 // determine if the message is a response, and what type of response it is.
 // They return dictionaries of all the possible fields that could be present in
-// JSON-RPC error/result responses, excluding the "jsonrpc" field, which is
-// present in all messages (CPJSONRPCHelper checks this field separately). Each
-// field maps to a boolean value, which is YES if the field MUST exist, and NO
-// if the field MAY be omitted.
+// JSON-RPC error/result responses. Each field maps to a boolean value, which is
+// YES if the field MUST exist, and NO if the field MAY be omitted.
 + (NSDictionary *)ValidAndExpectedResultKeys;
 + (NSDictionary *)ValidAndExpectedErrorKeys;
 
@@ -241,7 +236,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCObjectError) {
 
 ## Unit Tests
 
-I'm working on writing some...
+I've written a number of tests, check `CPJSONRPCSpec.m in` the example project. To run these tests, open up the example project and press `⌘+U`.
 
 ## Author
 

@@ -102,6 +102,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
 
 + (NSDictionary *)ValidAndExpectedErrorKeys {
     return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_VERSION_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_ERROR_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
             nil];
@@ -109,6 +110,7 @@ typedef NS_ENUM(NSInteger, CPJSONRPCResponseType) {
 
 + (NSDictionary *)ValidAndExpectedResultKeys {
     return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_VERSION_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_RESULT_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
             nil];

@@ -33,9 +33,6 @@
         return nil;
     }
     
-    // No need for RPC version now, so we remove it.
-    [incomingDictionary removeObjectForKey:JSON_RPC_VERSION_KEY];
-    
     if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCNotification ValidAndExpectedKeys]]) {
         return [CPJSONRPCHelper handleIncomingNotification:incomingDictionary error:err];
     } else if ([CPJSONRPCHelper incomingKeyset:incomingDictionary.allKeys doesComplyWithValidAndExpectedKeyset:[CPJSONRPCRequest ValidAndExpectedKeys]]) {

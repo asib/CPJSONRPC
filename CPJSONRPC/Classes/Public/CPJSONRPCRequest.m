@@ -54,6 +54,7 @@
 
 + (NSDictionary *)ValidAndExpectedKeys {
     return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], JSON_RPC_VERSION_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_METHOD_KEY,
             [NSNumber numberWithBool:NO], JSON_RPC_PARAMS_KEY,
             [NSNumber numberWithBool:YES], JSON_RPC_ID_KEY,
